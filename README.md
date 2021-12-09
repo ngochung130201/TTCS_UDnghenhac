@@ -1,6 +1,9 @@
 # TTCS_UDnghenhac
 Ho va ten : Huynh Ngoc Hung
 MSSV:61133707
+
+
+
 1.Phân tích bài toán
 -Ứng dụng nghe nhạc được viết bằng c# .Ý tưởng lấy từ chương trình nghe nhạc windowns Media Player Trên hệ điều hành Windowns sử dụng bunifuframework Để thiết kế GUI
 -Các chức năng cơ bản 
