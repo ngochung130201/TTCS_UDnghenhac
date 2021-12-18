@@ -34,7 +34,8 @@ namespace UngDungNhac
         private void btnClose_Click(object sender, EventArgs e)
         {
             //khi bam nut x thi hien len hop thoai nguoi dung nhan ok thi thoat
-            DialogResult result = MessageBox.Show("Bạn có muốn thoát không ?", "Thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát không ?", "Thoát",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if(result == DialogResult.OK)
             {
                 this.Close();
@@ -48,9 +49,8 @@ namespace UngDungNhac
         // tao mang de luu 1 danh sach nhac
         string[] paths; // tao mang chua dia chi
         string[] files; // tao mang chua ten
-        // mv
-        string[] pathsmv;
-        string[] filesmv;
+   
+      
 
         private void track_list_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -62,10 +62,10 @@ namespace UngDungNhac
             try // luon duoc thuc hien
             {
                 var file = TagLib.File.Create(paths[track_list.SelectedIndex]);// tao ra 1 duong dan vi tr
-                var bin = (byte[])(file.Tag.Pictures[0].Data.Data);
+                var bin = (byte[])(file.Tag.Pictures[0].Data.Data);//lay anh
               
                 pic_art.Image = Image.FromStream(new MemoryStream(bin));// them anh nhac vao khung anh co ten la art
-                pic2.Image = Image.FromStream(new MemoryStream(bin));
+                pic2.Image = Image.FromStream(new MemoryStream(bin));// hien ra anh co ten la pic2
             }
             catch
             {
@@ -92,6 +92,7 @@ namespace UngDungNhac
             if (track_list.SelectedIndex > 0|| track_list2.SelectedIndex>0)
             {
                 track_list.SelectedIndex = track_list.SelectedIndex - 1;
+                //list box cos ten la track_list_se ... 
                
             }
             else
@@ -287,7 +288,8 @@ namespace UngDungNhac
         {
 
 
-            DialogResult result = MessageBox.Show("Trở về kích thước ban đầu", "OK", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            DialogResult result = MessageBox.Show("Trở về kích thước ban đầu", "Thu nho",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (result == DialogResult.OK)
             {
                 this.WindowState = FormWindowState.Normal;
